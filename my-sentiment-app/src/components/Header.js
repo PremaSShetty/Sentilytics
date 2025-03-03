@@ -16,7 +16,7 @@ function Header() {
 
       if (response.ok) {
         const data = await response.json(); // Parse JSON response
-        navigate('/login'); // Redirect to login page
+        navigate('/'); // Redirect to login page
       } else {
         console.error('Logout failed');
       }
@@ -44,7 +44,7 @@ function Header() {
         </nav>
       ) : (
         // Show Logout button only on the dashboard
-        <button className="button" onClick={handleLogout}>Logout</button>
+        <button className="button signup-btn" onClick={handleLogout}>Logout</button>
       )}
     </header>
   );
