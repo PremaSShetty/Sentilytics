@@ -1,0 +1,156 @@
+/* Hero.css */
+.hero {
+    position: relative;
+    min-height: calc(100vh - 60px);
+    overflow: hidden;
+    margin-top: 60px;
+  }
+  
+  .hero-background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+    z-index: 0;
+  }
+  
+  .hero-content {
+    position: relative;
+    z-index: 1;
+    display: grid;
+    grid-template-columns: 1fr;
+    /* One column - stacking everything vertically */
+    grid-template-rows: auto;
+    /* Remove explicit row definitions to let content flow */
+    width: 80%;
+    max-width: 1200px;
+    padding: 20px;
+    gap: 20px;
+    /* Spacing between grid items */
+  }
+  
+  
+  .hero-left {
+    text-align: left;
+    color: #9400D3;
+    /* Purple Color */
+    grid-column: 1;
+    /* Remove explicit row assignment to allow flow */
+    display: flex;
+    flex-direction: column;
+    /* Stack items vertically */
+    align-items: flex-start;
+    /*Align items to the left*/
+  }
+  
+  .hero-left h1 {
+    font-size: 2.5em;
+    margin-bottom: 5px;
+  
+  }
+  
+  .hero-left p {
+    font-size: 1.1em;
+    line-height: 1.5;
+    margin-bottom: 15px;
+  
+  }
+  
+  .header-logo {
+    font-size: 3.5em;
+    font-weight: bold;
+    color: black;
+    /* Adjust color as needed */
+    margin-bottom: 5px;
+    /* Add spacing between the logo and the tagline */
+    margin-top: 20px;
+  }
+  
+  .tagline{
+    font-size: 1.1em;
+    line-height: 1.5;
+    margin-bottom: 15px;
+    color: black;
+  }
+  
+  .purple-text {
+    color: #9400D3;
+  }
+  
+  .logo-container {
+    width: 250px;
+    /* Increased width */
+    height: 250px;
+    /* Increased height */
+    /*Column 1 Column 1 */
+    place-self: start;
+    /* Center vertically and start horizontally*/
+    margin-left: 85px;
+    /*Move logo to the left */
+    margin-bottom: 20px;
+    /* Add space below the logo */
+    margin-top: 20px;
+  }
+  
+  .rotating-logo {
+    width: 100%;
+    height: 100%;
+    animation: rotate 10s linear infinite;
+  }
+  
+  .hero-right {
+    text-align: left;
+    color: #9400D3;
+    /*Make hero-right text Purple*/
+    margin-bottom: 20px;
+    /*Add spacing before the button group*/
+  }
+  
+  .hero-right p {
+    margin-bottom: 10px;
+  }
+  
+  .button-group {
+    margin-top: 20px;
+  }
+  
+  .signup-btn,
+  .login-btn {
+    padding: 12px 24px;
+    font-size: 1em;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    margin-right: 10px;
+  }
+  
+  .signup-btn {
+    background-color: purple;
+    color: white;
+  }
+  
+  .login-btn {
+    background-color: #f3edf3;
+    color: white;
+  }
+  
+  .signup-btn:hover {
+    background-color: #39045a;
+  }
+  
+  .login-btn:hover {
+    background-color: #16006e;
+  }
+  
+  @keyframes rotate {
+    from {
+      transform: rotate(0deg);
+    }
+    to {
+      transform: rotate(360deg);
+    }
+  }
