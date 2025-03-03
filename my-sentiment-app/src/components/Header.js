@@ -32,7 +32,7 @@ function Header() {
   return (
     <header className="header">
       <div className="logo">
-        <img src="hack12.jpg" alt="Logo" className="logo-image"/>
+        <img src="logosybg.jpg" alt="Logo" className="logo-image"/>
         <span className="logo-text">SENTI<span className="purple-text">LYTICS</span></span>
       </div>
       {!isDashboard ? (
