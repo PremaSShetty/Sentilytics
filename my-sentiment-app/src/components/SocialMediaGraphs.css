@@ -1,0 +1,48 @@
+/* SocialMediaGraphs.css */
+.graphs-container {
+    padding: 20px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;  /* stack content vertically */
+    margin-top: 70px; /* Add a top margin equal to (or slightly larger than) header height */
+  }
+  
+  /* Grid layout for graphs */
+  .grid-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr)); /* Responsive columns */
+    gap: 20px; /* Spacing between grid items */
+  }
+  
+  .graph {
+    margin-bottom: 10px;
+    border: 1px solid #ddd; /* Optional: Add a border */
+    padding: 10px; /* Optional: Add padding */
+    text-align: center;
+  }
+  
+  .graph img {
+    max-width: 100%; /* Ensure images fit within their containers */
+    height: auto;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+  
+  /* Responsive adjustments */
+  @media (max-width: 600px) {
+    .grid-container {
+      grid-template-columns: 1fr; /* Single column on smaller screens */
+    }
+  }
+  
+  /*Heading */
+  .graph-heading {
+    font-size: 2.5em;
+    font-weight: bold;
+    color: black;
+    margin-bottom: 20px;
+  }
+  
+  .purple-text {
+    color: #9400D3; /* Purple color */
+  }

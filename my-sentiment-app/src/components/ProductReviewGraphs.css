@@ -1,0 +1,56 @@
+/* ProductReviewGraphs.css */
+.graphs-container {
+    padding: 20px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    box-sizing: border-box;
+  }
+  
+  .grid-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr)); /* Responsive columns */
+    gap: 20px;
+    overflow-y: auto;
+    max-height: calc(100vh - 120px); /* Adjust based on header height and additional spacing */
+    padding: 10px; /* Add padding within the scrollable area */
+  }
+  
+  .graph {
+    margin-bottom: 10px;
+    border: 1px solid #ddd;
+    padding: 10px;
+    text-align: center;
+  }
+  
+  .graph h2 {
+    font-size: 1.2em;
+    margin-bottom: 10px;
+    color: #333;
+  }
+  
+  .graph img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+  
+  .graph-heading {
+    font-size: 2.5em;
+    font-weight: bold;
+    color: black;
+    margin-bottom: 20px;
+  }
+  
+  .purple-text {
+    color: #9400D3;
+  }
+  
+  /* Responsive adjustments */
+  @media (max-width: 600px) {
+    .grid-container {
+      grid-template-columns: 1fr;
+    }
+  }

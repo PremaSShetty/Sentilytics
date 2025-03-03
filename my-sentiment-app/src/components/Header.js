@@ -4,7 +4,9 @@ import { useNavigate, useLocation } from 'react-router-dom';
 function Header() {
   const location = useLocation();
   const navigate = useNavigate();
-  const isDashboard = location.pathname.startsWith('/dashboard'); // Check if on dashboard
+  const isDashboard = location.pathname.startsWith('/dashboard');
+  const isSocialMediaGraphs = location.pathname === '/social-media-graphs';
+  const isProductReviewGraphs = location.pathname === '/product-review-graphs';
 
   // Logout function
   const handleLogout = async () => {
@@ -32,18 +34,23 @@ function Header() {
   return (
     <header className="header">
       <div className="logo">
-        <img src="logosybg.jpg" alt="Logo" className="logo-image"/>
+        <img src="logosybg.jpg" alt="Logo" className="logo-image" />
         <span className="logo-text">SENTI<span className="purple-text">LYTICS</span></span>
       </div>
-      {!isDashboard ? (
-        // Show these links only if NOT on the dashboard
+
+      {/* Conditionally render the navigation links */}
+      {isSocialMediaGraphs || isProductReviewGraphs ? (
+        <nav className="nav">
+          <button className="button signup-btn" onClick={() => handleNavigation('/dashboard')}>Dashboard</button>
+          <button className="button signup-btn" onClick={handleLogout}>Logout</button>
+        </nav>
+      ) : !isDashboard ? (
         <nav className="nav">
           <button className="button signup-btn" onClick={() => handleNavigation('/')}>Home</button>
           <button className="button signup-btn" onClick={() => handleNavigation('/signup')}>Sign Up</button>
           <button className="button signup-btn" onClick={() => handleNavigation('/login')}>Login</button>
         </nav>
       ) : (
-        // Show Logout button only on the dashboard
         <button className="button signup-btn" onClick={handleLogout}>Logout</button>
       )}
     </header>
