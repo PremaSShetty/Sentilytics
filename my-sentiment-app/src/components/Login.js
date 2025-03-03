@@ -15,22 +15,23 @@ function Login() {
     setError(null);
 
     try {
-      const response = await axios.post('/', { // Adjust API endpoint if needed
-        email,
-        password,
-      });
+        const response = await axios.post('http://localhost:5000/login', { // Updated API endpoint
+            email,
+            password,
+        });
 
-      if (response.status === 200) {
-        // Login successful, redirect to dashboard
-        navigate('/dashboard');
-      } else {
-        setError('Invalid credentials');
-      }
+        if (response.status === 200) {
+            navigate('/dashboard');  // Redirect to dashboard after successful login
+        }
     } catch (err) {
-      setError('An error occurred. Please try again later.');
-      console.error(err);
+        if (err.response && err.response.status === 401) {
+            setError('Invalid credentials');
+        } else {
+            setError('An error occurred. Please try again later.');
+        }
+        console.error(err);
     }
-  };
+};
 
   return (
     <div className="login-container">

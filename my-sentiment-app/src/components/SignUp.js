@@ -14,51 +14,28 @@ function SignUp() {
   const navigate = useNavigate();
 
   const handleSubmit = async (e) => {
-    e.preventDefault(); // Prevent default form submission
-    setError(null); // Clear any previous errors
-
-    // Basic validation (you can add more)
-    if (!termsAccepted) {
-      setError('Please accept the Terms & Conditions.');
-      return;
-    }
+    e.preventDefault();
+    setError(null);
 
     try {
-      // Send POST request to your backend API
-      const backendUrl = 'http://127.0.0.1:5000'; 
+        const response = await axios.post('http://localhost:5000/signup', {
+            firstName,
+            lastName,
+            email,
+            password,
+        });
 
-      // Send POST request to the backend API
-
-      // const formData = new URLSearchParams();
-      //       formData.append('firstName', firstName);
-      //       formData.append('lastName', lastName);
-      //       formData.append('email', email);
-      //       formData.append('password', password);
-
-            const response = await axios.post(`${backendUrl}/signup`, {
-              firstName, 
-              lastName, 
-              email, 
-              password 
-              // headers: {
-              //       'Content-Type': 'application/json',
-              //   },
-            });
-
-      // Handle successful response (status code 200)
-      if (response.status === 200) {
-        // Redirect to login page
-        navigate('/login'); 
-      } else {
-        // Handle error response (e.g., display a generic error message)
-        setError('Signup failed. Please try again.'); 
-      }
+        if (response.status === 201) {
+            // Redirect to login page after successful signup
+            navigate('/login');
+        } else {
+            setError('Signup failed. Please try again.');
+        }
     } catch (err) {
-      // Handle network errors or other exceptions
-      setError('An error occurred. Please try again later.'); 
-      console.error(err); // Log the error for debugging
+        setError('An error occurred. Please try again later.');
+        console.error(err);
     }
-  };
+};
 
   return (
     <div className="signup-container">
