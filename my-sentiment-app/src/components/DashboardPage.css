@@ -1,0 +1,132 @@
+/* General Layout */
+.page-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: url('/public/background.jpg') no-repeat center center/cover; /* Background Image */
+    background-color: #f5f5f5; /* Fallback color */
+    padding: 20px;
+}
+  
+  .card-container {
+    display: flex;
+    gap: 20px;
+  }
+  
+  .card {
+    width: 300px;
+    background-color: #fff;
+    border-radius: 15px;
+    padding: 20px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    position: relative;
+  }
+  
+  /* Top Elements */
+  .status-dots {
+    position: absolute;
+    top: 15px;
+    left: 15px;
+    display: flex;
+    gap: 5px;
+  }
+  
+  .dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background-color: #333;
+  }
+  
+  .menu-icon {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    font-size: 1.5em;
+    color: #555;
+  }
+  
+  /* Icon Styles */
+  .icon-container {
+    width: 100px;
+    height: 100px;
+    margin: 20px auto;
+    border-radius: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(135deg, #8a2be2, #9400d3);
+    color: white;
+    font-size: 2.5em;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+  }
+  
+  .cart-icon {
+    font-size: 2em;  /* Smaller for Cart Icon */
+  }
+  
+  .user-icon i {
+    /* You may need to adjust styling depending on your icon library */
+    font-size: 2.5em;
+  }
+  
+  .cart-icon i {
+    font-size: 2em;
+  }
+  
+  
+  /* Text Styles */
+  .title {
+    font-size: 1.5em;
+    margin-bottom: 10px;
+    color: #333;
+  }
+  
+  .subtitle {
+    color: #777;
+    margin-bottom: 20px;
+  }
+  
+  .product-text {
+    color: #777;
+    margin-bottom: 20px;
+    text-align: left;
+  }
+  
+  /* Menu Lines */
+  .menu-lines {
+    width: 50px;
+    height: 5px;
+    background: linear-gradient(135deg, #8a2be2, #9400d3);
+    margin: 5px auto;
+  }
+  
+  /* Button Styles */
+  .button {
+    background: linear-gradient(135deg, #8a2be2, #9400d3);
+    color: white;
+    padding: 10px 25px;
+    border: none;
+    border-radius: 20px;
+    cursor: pointer;
+    margin-bottom: 20px;
+  }
+  
+  .button:hover {
+    opacity: 0.8;
+  }
+  
+  /* Star Rating */
+  .star-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .star {
+    font-size: 1.5em;
+    color: #ffc107;
+    margin: 0 3px;
+  }

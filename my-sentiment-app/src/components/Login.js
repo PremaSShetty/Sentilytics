@@ -64,9 +64,9 @@ function Login() {
         <p className="freepik-credit">Designed by freepik</p>
         {error && <div className="error-message">{error}</div>}
       </div>
-      <div className="login-image">
+      {/* <div className="login-image">
         <img src="hack13.jpg" alt="Login" />
-      </div>
+      </div> */}
     </div>
   );
 }
